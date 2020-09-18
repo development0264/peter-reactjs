@@ -1,20 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import "react-step-progress-bar/styles.css";
-import { ProgressBar } from "react-step-progress-bar";
 
-class App extends React.Component {
-
-  constructor(props) {
-    super(props);
-    // Don't call this.setState() here!
-    this.state = { counter: 0 };
-    this.handleClick = this.handleClick.bind(this);
-  }
-
-  render() {
-    return <h1>Hello, {this.props.name}</h1>;
-  }
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
+
 export default App;
