@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      progress: 16.66,
+      progress: 20,
       current_step: 1,
       //step 1
       email: '',
@@ -34,7 +34,7 @@ class App extends React.Component {
   onPreviousButtonClick = () => {
     var current_page_step = this.state.current_step;
     var progress = this.state.progress;
-    progress = progress - 16.66;
+    progress = progress - 20;
     current_page_step--;
     this.setState({
       current_step: current_page_step
@@ -70,7 +70,7 @@ class App extends React.Component {
 
     var current_page_step = this.state.current_step;
     var progress = this.state.progress;
-    progress = progress + 16.66;
+    progress = progress + 20;
     current_page_step++;
     this.setState({
       current_step: current_page_step
@@ -84,36 +84,38 @@ class App extends React.Component {
 
     var current_page_step = this.state.current_step;
     var progress = this.state.progress;
-    if (current_page_step === 1) {
-      var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-      if (!pattern.test(this.state.email)) {
-        this.setState({
-          email_error: 'Please enter valid email',
-          step_1_validation: false
-        })
-      }
-      else {
-        progress = progress + 16.66;
-        current_page_step++;
-        this.setState({
-          current_step: current_page_step
-        })
-        this.setState({
-          progress: progress
-        })
+    console.log("okok")
+    // if (current_page_step === 1) {
+    //   console.log("1")
+    //   var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
+    //   if (!pattern.test(this.state.email)) {
+    //     this.setState({
+    //       email_error: 'Please enter valid email',
+    //       step_1_validation: false
+    //     })
+    //   }
+    //   else {
+    //     progress = progress + 20;
+    //     current_page_step++;
+    //     this.setState({
+    //       current_step: current_page_step
+    //     })
+    //     this.setState({
+    //       progress: progress
+    //     })
 
-      }
-    }
-    else {
-      progress = progress + 16.66;
-      current_page_step++;
-      this.setState({
-        current_step: current_page_step
-      })
-      this.setState({
-        progress: progress
-      })
-    }
+    //   }
+    // }
+    // else {
+    progress = progress + 20;
+    current_page_step++;
+    this.setState({
+      current_step: current_page_step
+    })
+    this.setState({
+      progress: progress
+    })
+    // }
 
   }
 
@@ -134,17 +136,17 @@ class App extends React.Component {
         <br />
         <h1 className="font-weight-bold">Now lets add your financials!</h1>
         <br />
-        <label for="email" className=""><strong>Start adding your financials - Step {this.state.current_step} of 6</strong> </label>
+        <label for="email" className=""><strong>Start adding your financials - Step {this.state.current_step} of 5</strong> </label>
         <ProgressBar
           percent={this.state.progress}
           filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
         >
-          <Step transition="scale">
+          {/* <Step transition="scale">
             {({ accomplished }) => (<>
 
             </>
             )}
-          </Step>
+          </Step> */}
           <Step transition="scale">
             {({ accomplished }) => (<>
 
@@ -182,12 +184,12 @@ class App extends React.Component {
           </Step>
         </ProgressBar>
         <br />
-        {current_step == 1 ? (<Step1 details={this.state} onEmailChangeValidation={onEmailChangeValidation.bind(this)} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
-        {current_step == 2 ? (<Step2 details={this.state} onSecondFromSubmit={onSecondFromSubmit.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
-        {current_step == 3 ? (<Step3 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
-        {current_step == 4 ? (<Step4 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
-        {current_step == 5 ? (<Step5 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
-        {current_step == 6 ? (<><Step6 details={this.state} onPreviousButtonClick={onPreviousButtonClick.bind(this)} /> <button className="btn btn-primary"> Submit </button></>) : null}
+        {/* {current_step == 1 ? (<Step1 details={this.state} onEmailChangeValidation={onEmailChangeValidation.bind(this)} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null} */}
+        {current_step == 1 ? (<Step2 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
+        {current_step == 2 ? (<Step3 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
+        {current_step == 3 ? (<Step4 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
+        {current_step == 4 ? (<Step5 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
+        {current_step == 5 ? (<><Step6 details={this.state} onPreviousButtonClick={onPreviousButtonClick.bind(this)} /> <button className="btn btn-primary"> Submit </button></>) : null}
         <br />
 
 

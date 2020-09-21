@@ -22,7 +22,7 @@ class Step6 extends React.Component {
             <div className="row">
                 <div className="form-group">
                     {this.props.details.current_step > 1 ? (<button className="btn  btn-primary float-left" onClick={() => this.props.onPreviousButtonClick()}>Previous</button>) : null}
-                    {this.props.details.current_step < 6 ? (<button className="btn  btn-primary float-right ml-2" onClick={() => this.props.onNextButtonClick()} >Next</button>) : null}
+                    {/* {this.props.details.current_step < 6 ? (<button className="btn  btn-primary float-right ml-2" onClick={() => this.props.onNextButtonClick()} >Next</button>) : null} */}
                 </div>
             </div>
         </>)
