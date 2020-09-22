@@ -247,7 +247,7 @@ class step2 extends Component {
                             <div className="form-group mb-0">
                                 <label className="sub_label">Value of Asset {el.count} <span className="text-danger">*</span></label>
                                 <input type="text" className="form-control" onKeyUp={e => this.handleKeyUp(e)} onChange={e => this.handleTextChange(e.target.value, index, "property_asset")} name="property_asset" value={el.property_asset} required={true} />
-                                {(el.errors.property_asset != '') ? (<><label className="text-danger"><strong>{}</strong></label></>) : null}
+                                <label className="text-danger"><strong>{el.errors.property_asset}</strong></label>
                             </div>
                             :
                             <div className="form-group">
@@ -524,10 +524,10 @@ class step2 extends Component {
                         {el.selectedValue != "" ?
                             <div>
                                 {this.renderSelectedForm(el.selectedValue, el, index)}
-                                <button className="btn p-3 text-white bg-secondary" onClick={e => this.addAnother(el, index)}><strong>Add another</strong></button>
+                                {index != 5 ? <button className="btn p-3 text-white bg-secondary" onClick={e => this.addAnother(el, index)}><strong>Add another</strong></button> : null}
                             </div>
                             :
-                            (index > 0 && index < 5) ?
+                            (index > 0 && index < 6) ?
                                 <div>
                                     <div>
                                         <div className="form-group mb-0">
@@ -535,7 +535,7 @@ class step2 extends Component {
                                             <input className="form-control" type="text" value={el.asset} /><br />
                                         </div>
                                     </div>
-                                    <button className="btn p-3 text-white bg-secondary" onClick={e => this.addAnother(el, index)}><strong>Add another</strong></button>
+                                    {index != 5 ? <button className="btn p-3 text-white bg-secondary" onClick={e => this.addAnother(el, index)}><strong>Add another</strong></button> : null}
                                 </div>
                                 : null}
                     </div>

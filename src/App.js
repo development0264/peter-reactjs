@@ -16,7 +16,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       progress: 20,
-      current_step: 1,
+      current_step: 4,
       //step 1
       email: '',
       email_error: '',
@@ -167,7 +167,7 @@ class App extends React.Component {
         {current_step == 2 ? (<Step3 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
         {current_step == 3 ? (<Step4 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
         {current_step == 4 ? (<Step5 details={this.state} onNextButtonClick={onNextButtonClick.bind(this)} onPreviousButtonClick={onPreviousButtonClick.bind(this)} />) : null}
-        {current_step == 5 ? (<><Step6 details={this.state} onPreviousButtonClick={onPreviousButtonClick.bind(this)} /> <button className="btn btn-primary"> Submit </button></>) : null}
+        {current_step == 5 ? (<><Step6 details={this.state} onPreviousButtonClick={onPreviousButtonClick.bind(this)} /> <div className="form-group"><button className="btn  btn-previous  btn-primary float-left"> Submit </button></div></>) : null}
         <br />
 
 

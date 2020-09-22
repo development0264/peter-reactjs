@@ -22,6 +22,7 @@ button.btn-previous
     padding: 20px 70px;
     letter-spacing: 0.5px;
     border:0;
+    padding: 20px 40px !important;
 }
 
 button.btn-next
@@ -33,6 +34,7 @@ button.btn-next
     padding: 20px 70px;
     letter-spacing: 0.5px;
     border:0;
+    padding: 20px 40px !important;
 }
 
 button.btn-previous:hover
