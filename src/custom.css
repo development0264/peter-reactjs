@@ -1,0 +1,145 @@
+button.add_another_button {
+    background-color: #7e7e7e;
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+    padding: 20px 70px;
+    letter-spacing: 0.5px
+}
+
+button.add_another_button:hover
+{
+    color: white;
+    background-color:  #8c8c8c;
+}
+
+button.btn-previous
+{
+    background-color: #f2952b;
+    color: black;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 20px 70px;
+    letter-spacing: 0.5px;
+    border:0;
+}
+
+button.btn-next
+{
+    background-color: #f2952b;
+    color: black;
+    font-weight: 800;
+    font-size: 18px;
+    padding: 20px 70px;
+    letter-spacing: 0.5px;
+    border:0;
+}
+
+button.btn-previous:hover
+{
+    background-color: #f2952b;
+    color: black;
+}
+
+button.btn-next:hover
+{
+    background-color: #f2952b;
+    color: black;
+}
+
+label.sub_label
+{
+    font-weight: 700 !important;
+    font-size: 16px;
+    line-height: 1.3;
+    margin: 0 0 4px 0;
+    padding: 0;
+    color: #727272;
+}
+
+.form-group input, .form-group select {
+    max-width: 250px;
+    width: 100%;
+    border-radius: 0;
+    color:black;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.form-group.lg input, .form-group select {
+    max-width: 630px;
+    width: 100%;
+
+}
+
+.RSPBprogressBar
+{
+    height: 15px;
+}
+
+.RSPBprogression
+{
+    background: rgb(255, 174, 0) !important;
+}
+
+.checkbox-box
+{
+    background-color: #8c8c8c;
+    padding: 0px 30px;
+    border-radius: 10px
+}
+.checkbox-box p{
+    color: white;
+    padding: 0;
+    margin: 0;
+    font-weight: 700;
+}
+
+.email_validate_option_one_section a.box, .email_validate_option_two_section a.box
+{
+    width: 100%;
+    padding: 14px 30px;
+    color: white;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px; 
+}
+
+.checkbox-box {
+    position: relative;
+}
+.checkbox-box.active .check-wrap {
+    opacity: 1;
+    visibility: visible;
+}
+.check-wrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    pointer-events: none;
+    display: flex;
+    bottom: 0;
+    align-items: center;
+    transition: all 0.3s ease 0s;
+    justify-content: center;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.text-black
+{
+    color: black !important;
+}
+
+.text-danger
+{
+    font-weight: 700;
+}
+
+.text-dander
+{
+    color: #990000 !important;
+}

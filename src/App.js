@@ -84,29 +84,7 @@ class App extends React.Component {
 
     var current_page_step = this.state.current_step;
     var progress = this.state.progress;
-    console.log("okok")
-    // if (current_page_step === 1) {
-    //   console.log("1")
-    //   var pattern = new RegExp(/^(("[\w-\s]+")|([\w-]+(?:\.[\w-]+)*)|("[\w-\s]+")([\w-]+(?:\.[\w-]+)*))(@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$)|(@\[?((25[0-5]\.|2[0-4][0-9]\.|1[0-9]{2}\.|[0-9]{1,2}\.))((25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\.){2}(25[0-5]|2[0-4][0-9]|1[0-9]{2}|[0-9]{1,2})\]?$)/i);
-    //   if (!pattern.test(this.state.email)) {
-    //     this.setState({
-    //       email_error: 'Please enter valid email',
-    //       step_1_validation: false
-    //     })
-    //   }
-    //   else {
-    //     progress = progress + 20;
-    //     current_page_step++;
-    //     this.setState({
-    //       current_step: current_page_step
-    //     })
-    //     this.setState({
-    //       progress: progress
-    //     })
 
-    //   }
-    // }
-    // else {
     progress = progress + 20;
     current_page_step++;
     this.setState({
@@ -115,7 +93,7 @@ class App extends React.Component {
     this.setState({
       progress: progress
     })
-    // }
+
 
   }
 
@@ -134,9 +112,9 @@ class App extends React.Component {
     return (<>
       <div className="container">
         <br />
-        <h1 className="font-weight-bold">Now lets add your financials!</h1>
+        <h3 className="font-weight-bold">Add your financials!</h3>
         <br />
-        <label for="email" className=""><strong>Start adding your financials - Step {this.state.current_step} of 5</strong> </label>
+        {/* <label for="email" className=""><strong>Start adding your financials - Step {this.state.current_step} of 5</strong> </label> */}
         <ProgressBar
           percent={this.state.progress}
           filledBackground="linear-gradient(to right, #fefb72, #f0bb31)"
