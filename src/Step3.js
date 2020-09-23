@@ -99,12 +99,13 @@ class Step3 extends Component {
                             <input type="text" name="amount_owed_on_liability" onChange={e => this.handleTextChange(e.target.value, index, "amount_owed_on_liability")} className="form-control" required />
                             {(el.amount_owed_on_liability_error !== '') ? (<><span className="text-danger">{el.amount_owed_on_liability_error}</span></>) : null}
                         </div>
-                        <div className="form-group col-md-12">
-                            <label className="sub_label" for="credit_limit_on_liability">Credit limit on liability 1  <span className="text-danger">*</span> </label>
-                            <input type="text" name="credit_limit_on_liability" className="form-control" onChange={e => this.handleTextChange(e.target.value, index, "credit_limit_on_liability")} required />
-                            {(el.credit_limit_on_liability_error !== '') ? (<><span className="text-danger">{el.credit_limit_on_liability_error}</span></>) : null}
+                        {(el.liability == 'Credit card' || el.liability == 'Store card') ?
+                            <div className="form-group col-md-12">
+                                <label className="sub_label" for="credit_limit_on_liability">Credit limit on liability 1  <span className="text-danger">*</span> </label>
+                                <input type="text" name="credit_limit_on_liability" className="form-control" onChange={e => this.handleTextChange(e.target.value, index, "credit_limit_on_liability")} required />
+                                {(el.credit_limit_on_liability_error !== '') ? (<><span className="text-danger">{el.credit_limit_on_liability_error}</span></>) : null}
 
-                        </div>
+                            </div> : null}
                         <div className="form-group col-md-12">
                             <label className="sub_label" for="monthly_replayment_liability"> Monthly repayments on liability 1 <span className="text-danger">*</span> </label>
                             <input type="text" name="monthly_replayment_liability" className="form-control" onChange={e => this.handleTextChange(e.target.value, index, "monthly_replayment_liability")} required />
@@ -128,7 +129,43 @@ class Step3 extends Component {
                         </div>
 
 
-                    </>) : null}
+                    </>) : <div>
+                            {(index != 0) ?
+                                <div>
+                                    <div className="form-group col-md-12">
+                                        <label className="sub_label" for="liability_description">Liability 1 description (inc financial institution name) <span className="text-danger">*</span>
+                                        </label>
+                                        <input type="text" name="liability_description" className="form-control" onChange={e => this.handleTextChange(e.target.value, index, "liability_description")} required />
+                                        {(el.liability_description_error !== '') ? (<><span className="text-danger">{el.liability_description_error}</span></>) : null}
+                                    </div>
+                                    <div className="form-group col-md-12">
+                                        <label className="sub_label" for="amount_owed_on_liability">Amount owed on liability 1 <span className="text-danger">*</span> </label>
+                                        <input type="text" name="amount_owed_on_liability" onChange={e => this.handleTextChange(e.target.value, index, "amount_owed_on_liability")} className="form-control" required />
+                                        {(el.amount_owed_on_liability_error !== '') ? (<><span className="text-danger">{el.amount_owed_on_liability_error}</span></>) : null}
+                                    </div>
+                                    <div className="form-group col-md-12">
+                                        <label className="sub_label" for="monthly_replayment_liability"> Monthly repayments on liability 1 <span className="text-danger">*</span> </label>
+                                        <input type="text" name="monthly_replayment_liability" className="form-control" onChange={e => this.handleTextChange(e.target.value, index, "monthly_replayment_liability")} required />
+                                        {(el.monthly_replayment_liability_error !== '') ? (<><span className="text-danger">{el.monthly_replayment_liability_error}</span></>) : null}
+
+                                    </div>
+                                    <div className="form-group col-md-12">
+                                        <label className="sub_label" for="add_liability_1_monthly_repayment">Attach liability 1 statement or document (if provided)</label>
+                                        <div style={{ height: "100px" }} className="d-flex align-items-center justify-content-center border ">
+                                            <Dropzone onDrop={e => this.fileDrop(e, index, "property_filename")}>
+                                                {({ getRootProps, getInputProps }) => (
+                                                    <section>
+                                                        <div {...getRootProps()}>
+                                                            <input {...getInputProps()} />
+                                                            <p>Drag 'n' drop some files here, or click to select files</p>
+                                                        </div>
+                                                    </section>
+                                                )}
+                                            </Dropzone>
+                                        </div>
+                                    </div>
+                                </div> : null}
+                        </div>}
                     {(index < 3) ? (<>
                         <div className="from-group">
                             <button className="btn add_another_button" onClick={e => this.addAnother(el, index)}>Add Another</button>

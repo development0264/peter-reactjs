@@ -38,7 +38,8 @@ class step2 extends Component {
                 other_assetDescriptionValue: "",
                 other_assetValue: "",
                 count: 1,
-                errors: {}
+                errors: {},
+                label: "Add asset 1",
             }],
             share_financial_details_to_me: false,
             share_financial_details_to_public: false,
@@ -98,7 +99,8 @@ class step2 extends Component {
                 other_assetDescriptionValue: "",
                 other_assetValue: "",
                 count: this.state.count + 1,
-                errors: {}
+                errors: {},
+                label: "Add asset " + (this.state.count + 1),
             })
             this.setState({
                 count: this.state.count + 1,
@@ -257,7 +259,7 @@ class step2 extends Component {
                             </div>
                         }
                         <div className="form-group">
-                            <label className="sub_label">Loan on asset (if any) </label>
+                            <label className="sub_label">Loan on asset {el.count} (if any) </label>
                             <input type="text" className="form-control" onKeyUp={e => this.handleKeyUp(e)} onChange={e => this.handleTextChange(e.target.value, index, "property_assetLoan")} name="property_assetLoan" value={el.property_assetLoan}></input>
                         </div>
                         <div className="form-group">

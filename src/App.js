@@ -16,7 +16,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       progress: 20,
-      current_step: 4,
+      current_step: 1,
       //step 1
       email: '',
       email_error: '',
